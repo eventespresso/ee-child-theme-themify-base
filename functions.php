@@ -1,4 +1,11 @@
 <?php
+//Load the theme updater
+require 'theme_update_check.php';
+$MyUpdateChecker = new ThemeUpdateChecker(
+    'ee-child-theme-themify-base',
+    'https://kernl.us/api/v1/theme-updates/59dcad5ab765ab6a6acc71ae/'
+);
+
 //Load the parent theme css file
 add_action( 'wp_enqueue_scripts', 'themify_theme_enqueue_styles' );
 function themify_theme_enqueue_styles() {
